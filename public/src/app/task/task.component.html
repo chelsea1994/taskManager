@@ -1,6 +1,18 @@
 <div class="level">
     <div class="level-left">
 
+        <div *ngIf="task.flag == false">
+            <span (click)="flag()" class="icon is-small">
+                <i class="far fa-flag"></i>
+            </span>
+        </div>
+
+        <div *ngIf="task.flag == true">
+            <span (click)="flag()" class="icon is-small">
+                <i class="fas fa-flag"></i>
+            </span>
+        </div>
+
         <div *ngIf="task.completed == false">
             <span (click)="complete()" class="icon is-small">
                 <i class="far fa-square"></i>
