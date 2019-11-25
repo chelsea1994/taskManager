@@ -1,0 +1,39 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/51e11c29f2.js" crossorigin="anonymous"></script>
+  <title>Tasks</title>
+</head>
+<body>
+    <section class="section has-background-primary">
+
+        <h1 class="title is-1 has-text-light">Task Manager</h1>
+        <h1 class="subtitle is-3 has-text-grey-dark">Manage your tasks!</h1>
+
+    </section>
+
+<section class="section">
+
+    <div class="columns">
+
+        <div class="column is-one-quarter has-background-warning">
+            <app-menu></app-menu>
+        </div>
+
+        <div class="column has-background-grey-lighter">
+            <app-show></app-show>
+            <app-task-box></app-task-box>
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
