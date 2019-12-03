@@ -11,6 +11,9 @@ import { ShowComponent } from './show/show.component';
 import { MenuComponent } from './menu/menu.component';
 import { TaskBoxComponent } from './task-box/task-box.component';
 import { TaskComponent } from './task/task.component';
+import { AllTasksComponent } from './all-tasks/all-tasks.component';
+import { FlaggedTasksComponent } from './flagged-tasks/flagged-tasks.component';
+import { CategorizedTasksComponent } from './categorized-tasks/categorized-tasks.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { TaskComponent } from './task/task.component';
     ShowComponent,
     MenuComponent,
     TaskBoxComponent,
-    TaskComponent
+    TaskComponent,
+    AllTasksComponent,
+    FlaggedTasksComponent,
+    CategorizedTasksComponent
   ],
   imports: [
     BrowserModule,

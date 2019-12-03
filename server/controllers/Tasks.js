@@ -12,6 +12,17 @@ module.exports = {
             .catch(err => console.log({error: err}));
     },
 
+    ShowFlags: (req, res) => {
+        Task.find({flag: true})
+            .then(fTasks => {
+                console.log(fTasks);
+                console.log("Got all flagged tasks");
+                res.json({fTasks: fTasks, status: true})
+            })
+            .catch(err => console.log({error: err, status: false}));
+            
+    },
+
     Show: (req, res) => {
         const { id } = req.params;
         Task.findOne({_id: id})
@@ -60,7 +71,7 @@ module.exports = {
         Task.findOne({_id: req.params.id})
             .then(task => {
                 task.title = req.body.title;
-                task.note = req.body.note;
+                task.flag = req.body.flag;
                 task.due = req.body.due;
                 task.category = req.body.category;
                 task.completed = req.body.completed;

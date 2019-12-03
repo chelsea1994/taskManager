@@ -12,7 +12,7 @@
                 
         <div class="container">
     
-            <button class="button is-rounded is-centered">
+            <button [routerLink]="['/tasks']" class="button is-rounded is-centered">
     
                 <span class="icon is-small">
                     <i class="fas fa-list-ul"></i>
@@ -22,7 +22,7 @@
     
             </button>
     
-            <button class="button is-rounded is-centered">
+            <button [routerLink]="['/tasks/flagged']" class="button is-rounded is-centered">
     
                 <span class="icon is-small">
                     <i class="fas fa-flag"></i>
@@ -58,7 +58,7 @@
             <div *ngIf="categories">
                 <div class="buttons">
                     <div *ngFor="let cat of categories">
-                        <button class="button is-info is-rounded">{{cat.name}}</button>
+                        <button [routerLink]="['/tasks/cat.name']" class="button is-info is-rounded">{{cat.name}}</button>
                     </div>
                 </div>
             </div>

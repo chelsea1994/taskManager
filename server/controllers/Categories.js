@@ -12,8 +12,8 @@ module.exports = {
     },
 
     Show: (req, res) => {
-        const { id } = req.params;
-        Category.findOne({_id: id})
+        const { name } = req.params;
+        Category.findOne({name: name})
             .then(category => {
                 console.log("Found one category.");
                 res.json({status: true, category: category});

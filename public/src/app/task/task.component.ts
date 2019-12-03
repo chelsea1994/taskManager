@@ -10,21 +10,12 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class TaskComponent implements OnInit {
 @ Input() task: any;
-completed = false;
 
   constructor(private _httpService: HttpService, private _router: Router) { }
 
   ngOnInit() {
   }
 
-  comp(){
-    if(this.completed == false){
-        this.completed = true;
-    }
-    else{
-        this.completed = false;
-    }
-  }
 
   complete(){
     if(this.task["completed"] == false){
@@ -74,7 +65,7 @@ completed = false;
                 console.log("There was an issue updating the task object.")
             }
             else{
-                console.log("Should have sucessfully updated task's flagged property to FALSE.")
+                console.log("Should have sucessfully updated task's flagged property to FALSE.");
             }
         })
     }

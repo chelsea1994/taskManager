@@ -1,0 +1,13 @@
+<div *ngIf="tasks">
+
+        <div class="box">
+    
+            <div *ngFor="let t of tasks">
+    
+                <app-task [task]="t"></app-task>
+    
+            </div>
+                
+        </div>
+    
+    </div>

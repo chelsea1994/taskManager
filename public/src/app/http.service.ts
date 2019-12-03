@@ -12,8 +12,16 @@ export class HttpService {
     return this._http.get('/api/tasks');
   }
 
+  flagged(){
+      return this._http.get('/api/tasks/flagged');
+  }
+
   allCategories(){
     return this._http.get('/api/categories');
+  }
+
+  oneCategory(name){
+      return this._http.get('api/categories/' + name);
   }
 
   createTask(task){
