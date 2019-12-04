@@ -12,8 +12,8 @@ module.exports = {
     },
 
     Show: (req, res) => {
-        const { name } = req.params;
-        Category.findOne({name: name})
+        const { id } = req.params;
+        Category.findOne({_id: id})
             .then(category => {
                 console.log("Found one category.");
                 res.json({status: true, category: category});
@@ -49,6 +49,7 @@ module.exports = {
         Category.findOne({_id: req.params.id})
             .then(cat => {
                 cat.name = req.body.name;
+                cat.tasks = req.body.tasks;
                 return cat.save();
             })
             .then(saveResult => {

@@ -14,6 +14,8 @@ errors = [];
 category = {name: ""};
 showCatForm = false;
 categories = [];
+tasksByCat = [];
+menuClickedCat: any;
 
   constructor(private _httpService: HttpService, private _router: Router) { }
 
@@ -46,6 +48,21 @@ categories = [];
             this.ngOnInit();
 
         })
+    }
+
+    showCategory(catId){
+        console.log(catId);
+        this.menuClickedCat = catId;
+        // let cat = this._httpService.oneCategory(catId);
+        // cat.subscribe(data => {
+        //     if(data["status"] == false){
+        //         console.log("Issue in menu .ts subscribing to category");
+        //     }
+        //     else{
+        //         this.tasksByCat = data["category"]["tasks"];
+        //         console.log("TasksbyCat variable is...", this.tasksByCat);
+        //     }
+        // })
     }
 
 

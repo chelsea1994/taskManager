@@ -13,7 +13,7 @@ module.exports = (app) => {
     app.put('/api/tasks/:id', Tasks.Update);
     app.delete('/api/tasks/:id', Tasks.remove);
     app.get('/api/categories', Categories.index);
-    app.get('/api/categories/:name', Categories.Show);
+    app.get('/api/categories/:id', Categories.Show);
     app.post('/api/categories', Categories.Create);
     app.put('/api/categories/:id', Categories.Update);
     app.delete('/api/categories/:id', Categories.remove);

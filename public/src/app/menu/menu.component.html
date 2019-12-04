@@ -58,7 +58,7 @@
             <div *ngIf="categories">
                 <div class="buttons">
                     <div *ngFor="let cat of categories">
-                        <button [routerLink]="['/tasks/cat.name']" class="button is-info is-rounded">{{cat.name}}</button>
+                        <button [routerLink]="['/tasks/' + cat._id]"  class="button is-info is-rounded">{{cat.name}}</button>
                     </div>
                 </div>
             </div>

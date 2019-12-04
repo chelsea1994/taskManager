@@ -8,7 +8,7 @@ import { FlaggedTasksComponent } from './flagged-tasks/flagged-tasks.component';
 const routes: Routes = [
     {path: "tasks", component: AllTasksComponent},
     {path: "tasks/flagged", component: FlaggedTasksComponent},
-    {path: "tasks/:category", component: CategorizedTasksComponent},
+    {path: "tasks/:id", component: CategorizedTasksComponent},
     {path: "", pathMatch: "full", redirectTo: "/tasks"}
 ];
 

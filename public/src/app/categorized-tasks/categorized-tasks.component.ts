@@ -9,21 +9,23 @@ import { HttpService } from '../http.service';
 })
 export class CategorizedTasksComponent implements OnInit {
 
-catName: any;
+catId: any;
+tasks = [];
 cat: any;
 
   constructor(private _httpService: HttpService, private _router: Router, private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this._route.params.subscribe((params: Params) => {
-        this.catName = (params['category']);
-        let observable = this._httpService.oneCategory(this.catName);
+        this.catId = (params['id']);
+        let observable = this._httpService.oneCategory(this.catId);
             observable.subscribe(data => {
                 if(data["status"] == false){
                     console.log("Something went wrong trying to get one category.");
                 }
                 else{
                     this.cat = data["category"];
+                    this.tasks = data["category"]["tasks"];
                 }
             })
         })

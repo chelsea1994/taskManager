@@ -87,11 +87,15 @@ module.exports = {
                     }
                 res.json({status: false, errors: errors})
                 })
-},
+    },
 
-remove: (req, res) => {
-    Task.deleteOne({_id: req.params.id})
-            .then(() => res.json({status: true}))
-            .catch(() => res.json({status: false}))
-},
+    remove: (req, res) => {
+        Task.deleteOne({_id: req.params.id})
+               .then(() => res.json({status: true}))
+               .catch(() => res.json({status: false}))
+
+    },
+
+
+
 }

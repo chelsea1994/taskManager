@@ -20,8 +20,8 @@ export class HttpService {
     return this._http.get('/api/categories');
   }
 
-  oneCategory(name){
-      return this._http.get('api/categories/' + name);
+  oneCategory(id){
+      return this._http.get('api/categories/' + id);
   }
 
   createTask(task){
