@@ -1,27 +1,33 @@
-<div class="level">
-        <p class="has-text-weight-bold has-text-centered">
+<section class="section">
+    
+        <div class="container">
+                <p class="has-text-weight-bold has-text-centered">
+        
+                    <button (click)="showTForm()" class="button is-success is-small">
+                        <span class="icon is-small">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button> 
+                    
+                    Add Task
+                    
+                </p>
 
-            <button (click)="showTForm()" class="button is-success is-small">
-                <span class="icon is-small">
-                    <i class="fas fa-plus"></i>
-                </span>
-            </button> 
-            
-            Add Task
-            
-        </p>
     </div>
+    
+    
+    
+        <div *ngIf="showTaskForm == true">
+            <form (submit)="newTask()">
+                <input class="input is-rounded" type="text" name="title" [(ngModel)]="task.title" placeholder="Task">
+                <input class="input is-rounded" type="date" name="due" [(ngModel)]="task.due" placeholder="Deadline">
+                <div class="select is-rounded">
+                    <select [(ngModel)]="task.categoryid" name="categoryid">
+                        <option  *ngFor="let cat of categories" value="{{cat._id}}">{{cat.name}}</option>
+                    </select>
+                </div>
+                <button class="button is-success is-small">Go!</button>
+            </form>
+        </div>
 
-
-    <div *ngIf="showTaskForm == true">
-        <form (submit)="newTask()">
-            <input class="input is-rounded" type="text" name="title" [(ngModel)]="task.title" placeholder="Task">
-            <input class="input is-rounded" type="date" name="due" [(ngModel)]="task.due" placeholder="Deadline">
-            <div class="select is-rounded">
-                <select [(ngModel)]="task.categoryid" name="categoryid">
-                    <option  *ngFor="let cat of categories" value="{{cat._id}}">{{cat.name}}</option>
-                </select>
-            </div>
-            <button class="button is-success is-small">Go!</button>
-        </form>
-    </div>
+</section>
